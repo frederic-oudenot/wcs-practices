@@ -1,0 +1,13 @@
+{
+  "name": "e02-challenge-ts",
+  "version": "1.0.0",
+  "description": "challenge-ts",
+  "main": "./build/index.js",
+  "scripts": {
+    "build":"tsc",
+    "dev":"node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
