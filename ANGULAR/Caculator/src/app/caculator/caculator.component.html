@@ -1,0 +1,19 @@
+<p>caculator works!</p>
+<div class="calculator">
+  <app-display [result]="result"></app-display>
+  <section class="random">
+    <app-button [content]="'Random a'"  (click)="generateRandomNumber()"></app-button>
+    <app-button [content]="'Random b'" (click)="generateRandomNumber()"></app-button>
+  </section>
+
+  <section class="operators">
+    <app-button [content]="'+'" (click)="selectOperator('+')"></app-button>
+    <app-button [content]="'-'"  (click)="selectOperator('-')">-</app-button>
+    <app-button [content]="'*'" (click)="selectOperator('*')">*</app-button>
+    <app-button [content]="'/'" (click)="selectOperator('/')">/</app-button>
+    <app-button [content]="'='" (click)="calculate()">/</app-button>
+    <app-button [content]="'reset'" (click)="reset()">/</app-button>
+
+  </section>
+
+</div>
