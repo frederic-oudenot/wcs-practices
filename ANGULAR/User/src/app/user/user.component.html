@@ -1,0 +1,55 @@
+<div class="form">
+  <h3>Formulaire d'enregistrment</h3>
+  <fieldset>
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" [formControl]="username" />
+    @if(isSubmit && !isUsername){
+      <span class="alert">L'username est requis et doit être supérieur à 2 caractères</span>
+    }
+  </fieldset>
+  <fieldset>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" [formControl]="email" />
+    @if(isSubmit && !isEmail){
+      <span class="alert">L'email est requis et doit être respecter le format email</span>
+    }
+  </fieldset>
+  <fieldset>
+    <label for="password">Mot de passe</label>
+    <input
+      type="password"
+      name="password"
+      id="password"
+      [formControl]="password"
+    />
+    @if(isSubmit && !isPassword){
+      <span class="alert">Le mot de passe est requis et doit être supérieur à 8 caractères, avec 2 majuscules, un caractère spécial et des nombres</span>
+    }
+  </fieldset>
+  <fieldset>
+    <label for="address">Adresse</label>
+    <input type="text" name="address" id="address" [formControl]="address" />
+    @if(isSubmit && !isAddress){
+      <span class="alert">L'adresse doit être complète !</span>
+    }
+  </fieldset>
+  <button class='submit' type="submit" (click)="onSubmit()">Inscription</button>
+
+  @if(isSubscribe){
+  <div class="reponse">
+    <h3>Bonjour {{user.username}} !</h3>
+    <section>
+      <fieldset>Vos coordonées :
+        <p>Email : {{user.email}}</p>
+        <p>Password : {{user.password}}</p>
+        <p>Adresse : {{user.address}}</p>
+      </fieldset>
+    </section>
+
+  </div>
+} @else {
+  <p class="alert">{{errorMessage}}</p>
+}
+
+</div>
+
