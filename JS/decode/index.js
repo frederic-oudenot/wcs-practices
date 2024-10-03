@@ -25,6 +25,6 @@ const hiddenCode = "XXXXXXXXXXXXXXXXXXXXXXXXXXXCXXXXXXXOXXXXXDXXXXXXXXXXXXXXXEXX
 const convertHiddenCode = hiddenCode.split("X")
 convertHiddenCode.forEach(code => {
     // Condition to get value different to ''
-  code !== '' ? messageCode += code : null
+  code !== '' ? code %2 ? messageCode += code : null : null
 });
 console.log('Exercice 2 decoded : ',messageCode);
